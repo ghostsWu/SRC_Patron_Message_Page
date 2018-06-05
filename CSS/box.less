@@ -1,0 +1,175 @@
+@bg:#941b22; //背景色
+@ip6s: 425px; //断点宽度
+
+
+html,body{
+	background-color: @bg;
+	border: 0;
+	margin: 0;
+	height: 100%;
+
+	@media (max-width: @ip6s) {
+		font-size: 10px;
+		line-height: 10px;
+	}
+
+}
+
+ul,li{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+img {
+	border: 0;
+	margin: 0;
+	width: 100%;
+}
+
+.gift_stage{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+		.gift_bg{
+			background-image: url(../images/SRC-Patron-Message-Page_01.jpg);
+			height: 100%;
+		}
+		> div{
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+		}
+
+}
+
+.gift_box{
+	// display: none;
+	position: relative;
+	height: 100%;
+	cursor: pointer;
+
+		ul li{
+			position: absolute;
+			bottom: 20px;
+			transition: all 1s ease 0s;
+		}
+
+		.gift_light_1,.gift_light_2,.gift_light_3,.gift_box_2,.gift_light_out{
+			opacity: 0;
+		}
+
+		.gift_light_1,.gift_light_2,.gift_light_3{
+			-webkit-transform-origin:50.79% 71.66%;
+			        transform-origin:50.79% 71.66%;
+			img{
+				-webkit-transform-origin:50.79% 71.66%;
+				        transform-origin:50.79% 71.66%;
+			}
+		}
+
+		.gift_box_2{
+			transition:none;
+		}
+		.gift_light_out img{
+			-webkit-transform-origin:37.47% 68.69%;
+			        transform-origin:37.47% 68.69%;
+		}
+
+		.gift_box_cover{
+			-webkit-transform: rotate(0deg) translate(0%, 0%);
+			        transform: rotate(0deg) translate(0%, 0%);
+			transition-timing-function: cubic-bezier(0.11, 0.65, 0.18, 1.46);
+		}
+
+
+}
+
+// 动画预备，盒子漏光
+.click_ready{
+	.gift_box_cover img{
+		-webkit-animation: cover 1s ease 0s 1 normal forwards;
+		        animation: cover 1s ease 0s 1 normal forwards;
+	}
+	.gift_light_out{
+		opacity: 1;
+		img{
+		-webkit-animation: lightout 4s ease .5s infinite alternate forwards;
+		        animation: lightout 4s ease .5s infinite alternate forwards;
+		}
+	}
+	.gift_light_1,.gift_light_2,.gift_light_3{
+		-webkit-transform: scale(0.9,0.4);
+		        transform: scale(0.9,0.4);
+		transition-timing-function: cubic-bezier(0.11, 0.65, 0.18, 1.46);
+
+	}
+
+	.gift_light_1{transition-delay: .1s}
+	.gift_light_2{transition-delay: .2s}
+	.gift_light_3{transition-delay: .4s}
+
+}
+
+
+// 动画播放
+.box_animat{
+	.gift_light_out img{
+		-webkit-animation:none;
+		        animation:none;
+		opacity: 0;
+	}
+
+	.gift_box_cover{
+		-webkit-animation:none;
+		        animation:none;
+		-webkit-transform: rotate(18deg) translate(-3%, -58%);
+		        transform: rotate(18deg) translate(-3%, -58%);
+	}
+
+	.gift_light_1,.gift_light_2,.gift_light_3,.gift_box_2{
+		opacity: 1;
+	}
+
+	.gift_light_1,.gift_light_2,.gift_light_3{
+		-webkit-transform: scale(1,1);
+		        transform: scale(1,1);
+		img{
+			// animation-name: myfirst;
+			
+			-webkit-animation-timing-function: linear;
+			
+			        animation-timing-function: linear;
+			-webkit-animation-delay: 0s;
+			        animation-delay: 0s;
+			-webkit-animation-iteration-count: infinite;
+			        animation-iteration-count: infinite;
+			-webkit-animation-direction: alternate;
+			        animation-direction: alternate;
+		}
+	}
+
+	.gift_light_1 img{-webkit-animation-name: light_1;animation-name: light_1;-webkit-animation-duration: 6s;animation-duration: 6s;}
+	.gift_light_2 img{-webkit-animation-name: light_2;animation-name: light_2;-webkit-animation-duration: 9s;animation-duration: 9s;}
+	.gift_light_3 img{-webkit-animation-name: light_3;animation-name: light_3;-webkit-animation-duration: 7s;animation-duration: 7s;}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
